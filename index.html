@@ -38,37 +38,40 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .hidden{display:none!important}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
+/* Light theme — matches the widget's dark-on-light baseline */
 :root{
-  --headC:#0b1220;
-  --bodyC:#475569;
-  --bodyCa:#94a3b8;
-  --bodyB:#f6f8fb;
+  --headC:#1f2937;
+  --bodyC:#4b5563;
+  --bodyCa:#9ca3af;
+  --bodyB:#fdfcff;
   --linkC:#316DF7;
   --linkB:#316DF7;
   --headerB:#ffffff;
   --contentB:#ffffff;
-  --contentL:#e6e9ef;
+  --contentL:#e5e7eb;
   --footerB:#ffffff;
   --headerH:62px;
   --contentW:1240px;
   --sideW:300px;
-  --shadow-sm:0 1px 2px rgba(15,23,42,.06);
-  --shadow:0 6px 24px rgba(15,23,42,.08);
-  --shadow-lg:0 14px 44px rgba(15,23,42,.12);
+  --shadow-sm:0 4px 6px -1px rgba(0,0,0,.1);
+  --shadow:0 10px 15px -3px rgba(0,0,0,.1);
+  --shadow-lg:0 20px 30px -10px rgba(0,0,0,.15);
   --radius:14px;
-  --brand-gradient:linear-gradient(135deg,#159AFA 0%,#316DF7 40%,#5550F4 70%,#942CF3 100%);
+  --brand-gradient:linear-gradient(135deg,#159AFA 0%,#316DF7 35%,#5550F4 65%,#942CF3 100%);
 }
+
+/* Dark theme — EXACTLY matches the widget's dark tokens (#1e1e1e / #2d2d30 / #252526 / #fffdfc / #989b9f) */
 body.drK{
-  --headC:#f8fafc;
-  --bodyC:#cbd5e1;
-  --bodyCa:#94a3b8;
-  --bodyB:#0f172a;
-  --headerB:#111827;
-  --contentB:#1e293b;
-  --contentL:#334155;
-  --footerB:#111827;
-  --linkC:#60a5fa;
-  --linkB:#3b82f6;
+  --headC:#fffdfc;
+  --bodyC:#fffdfc;
+  --bodyCa:#989b9f;
+  --bodyB:#1e1e1e;
+  --headerB:#1e1e1e;
+  --contentB:#2d2d30;
+  --contentL:#4b5563;
+  --footerB:#1e1e1e;
+  --linkC:#41B375;
+  --linkB:#41B375;
 }
 
 /* ==========================================================
@@ -80,7 +83,7 @@ body.drK{
   border-bottom:1px solid var(--contentL);
   transition:box-shadow .2s;
 }
-.site-header.stick{box-shadow:0 4px 20px rgba(15,23,42,.08)}
+.site-header.stick{box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .header-inner{
   max-width:var(--contentW);height:var(--headerH);
   margin:0 auto;padding:0 24px;
@@ -90,6 +93,7 @@ body.drK{
   display:flex;align-items:center;gap:10px;
   font-family:'Montserrat',sans-serif;font-weight:800;
   font-size:19px;color:var(--headC);letter-spacing:-.3px;
+  flex-shrink:0;
 }
 .brand-mark{
   width:34px;height:34px;border-radius:10px;
@@ -99,7 +103,7 @@ body.drK{
   box-shadow:0 4px 12px rgba(49,109,247,.35);
 }
 
-/* Nav moved to the right */
+/* Nav — RIGHT side */
 .main-nav{
   display:flex;align-items:center;gap:4px;
   margin-left:auto;
@@ -111,15 +115,21 @@ body.drK{
   transition:background .15s,color .15s;
 }
 .main-nav a:hover{background:rgba(0,0,0,.05);color:var(--linkC);text-decoration:none}
+body.drK .main-nav a:hover{background:rgba(255,255,255,.08)}
 .main-nav svg{width:16px;height:16px;opacity:.7}
 
-.header-actions{display:flex;align-items:center;gap:4px;margin-left:12px}
+.header-actions{
+  display:flex;align-items:center;gap:4px;
+  margin-left:12px;
+  flex-shrink:0;
+}
 .icon-btn{
   width:38px;height:38px;border-radius:10px;
   display:flex;align-items:center;justify-content:center;
   color:var(--headC);cursor:pointer;transition:background .15s;
 }
 .icon-btn:hover{background:rgba(0,0,0,.05)}
+body.drK .icon-btn:hover{background:rgba(255,255,255,.08)}
 .icon-btn svg{width:20px;height:20px}
 .icon-btn.menu{display:none}
 
@@ -148,10 +158,10 @@ body.drK{
 }
 
 /* ==========================================================
-   MATCHES SECTION (unchanged from provided code)
+   MATCHES SECTION (unchanged module)
    ========================================================== */
 .matches-section{--primary-color:#2563eb;--secondary-color:#1e40af;--text-primary:#1f2937;--text-secondary:#6b7280;--bg-primary:#ffffff;--bg-secondary:#f9fafb;--bg-card:#ffffff;--border-color:#e5e7eb;--shadow:0 4px 6px -1px rgba(0,0,0,.1);--shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);--brand-blue-bright:#159AFA;--brand-blue-medium:#316DF7;--brand-indigo:#5550F4;--brand-purple:#942CF3;--brand-white:#FBFAFD;--brand-accent:var(--brand-blue-medium);--brand-gradient:linear-gradient(135deg,#159AFA 0%,#316DF7 35%,#5550F4 65%,#942CF3 100%);background:var(--bg-card);padding:0}
-body.drK .matches-section{--primary-color:#41B375!important;--secondary-color:#2d8e5a!important;--text-primary:#fffdfc!important;--text-secondary:#989b9f!important;--bg-primary:#1e1e1e!important;--bg-secondary:#2d2d30!important;--bg-card:#252526!important;--border-color:#4b5563!important}
+body.drK .matches-section{--primary-color:#41B375!important;--secondary-color:#2d8e5a!important;--text-primary:#fffdfc!important;--text-secondary:#989b9f!important;--bg-primary:#1e1e1e!important;--bg-secondary:#2d2d30!important;--bg-card:#252526!important;--border-color:#4b5563!important;--shadow:0 4px 6px -1px rgba(0,0,0,.3)!important;--shadow-lg:0 10px 15px -3px rgba(0,0,0,.3)!important}
 .matches-section .container{max-width:1200px;margin:0 auto}
 .matches-section *{margin:0;padding:0;box-sizing:border-box}
 .matches-section *::-webkit-scrollbar{display:none}
@@ -239,14 +249,15 @@ body.drK .matches-section{--primary-color:#41B375!important;--secondary-color:#2
   transition:background .15s;cursor:pointer;
 }
 .post-item:last-child{border-bottom:0}
-.post-item:hover{background:rgba(0,0,0,.03)}
-body.drK .post-item:hover{background:rgba(255,255,255,.04)}
+.post-item:hover{background:rgba(0,0,0,.04)}
+body.drK .post-item:hover{background:rgba(72,45,255,.15)}
 
 .post-tag{
   display:inline-block;padding:3px 9px;margin-bottom:8px;
   font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
   color:var(--linkC);background:rgba(49,109,247,.1);border-radius:6px;
 }
+body.drK .post-tag{color:#41B375;background:rgba(65,179,117,.15)}
 .post-title{font-size:1.05rem;margin-bottom:6px;line-height:1.45}
 .post-title a{color:var(--headC);text-decoration:none}
 .post-item:hover .post-title a{color:var(--linkC);text-decoration:none}
@@ -259,7 +270,7 @@ body.drK .post-item:hover{background:rgba(255,255,255,.04)}
 .post-meta span{display:inline-flex;align-items:center;gap:5px}
 
 /* ==========================================================
-   SIDEBAR WIDGETS
+   SIDEBAR WIDGETS (matches widget dark tokens)
    ========================================================== */
 .widget{
   background:var(--contentB);
@@ -275,7 +286,6 @@ body.drK .post-item:hover{background:rgba(255,255,255,.04)}
 }
 .widget h3::after{content:'';flex:1;height:1px;background:var(--contentL)}
 
-/* Popular Posts — no numbers, just title + snippet */
 .pop-list li{
   padding:12px 0;
   border-bottom:1px dashed var(--contentL);
@@ -284,7 +294,7 @@ body.drK .post-item:hover{background:rgba(255,255,255,.04)}
 .pop-list li:last-child{border-bottom:0;padding-bottom:0}
 .pop-title{
   font-size:13.5px;font-weight:600;color:var(--headC);
-  line-height:1.4;margin-bottom:4px;
+  line-height:1.4;margin-bottom:4px;display:block;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
 }
 .pop-title:hover{color:var(--linkC);text-decoration:none}
@@ -313,15 +323,16 @@ body.drK .post-item:hover{background:rgba(255,255,255,.04)}
 .ad-slot img{max-width:100%;height:auto;border-radius:8px}
 
 /* ==========================================================
-   DRAWER MENU
+   DRAWER MENU (60% width)
    ========================================================== */
 .drawer-overlay{
-  position:fixed;inset:0;background:rgba(15,23,42,.55);
+  position:fixed;inset:0;background:rgba(0,0,0,.55);
   backdrop-filter:blur(4px);z-index:200;
   opacity:0;visibility:hidden;transition:.3s;
 }
 .drawer{
-  position:fixed;top:0;bottom:0;left:0;width:60%;max-width:520px;
+  position:fixed;top:0;bottom:0;left:0;
+  width:60%;max-width:520px;
   background:var(--contentB);z-index:201;
   transform:translateX(-100%);
   transition:transform .35s cubic-bezier(.22,1,.36,1);
@@ -339,6 +350,7 @@ body.drawer-open .drawer-overlay{opacity:1;visibility:visible}
   color:var(--bodyC);cursor:pointer;transition:background .15s;
 }
 .drawer-close:hover{background:rgba(0,0,0,.05)}
+body.drK .drawer-close:hover{background:rgba(255,255,255,.08)}
 .drawer-body{padding:16px;overflow-y:auto;flex:1}
 .drawer-menu li a{
   display:flex;align-items:center;gap:12px;
@@ -347,6 +359,7 @@ body.drawer-open .drawer-overlay{opacity:1;visibility:visible}
   text-decoration:none;
 }
 .drawer-menu li a:hover{background:rgba(0,0,0,.05);color:var(--linkC);text-decoration:none}
+body.drK .drawer-menu li a:hover{background:rgba(255,255,255,.08)}
 .drawer-menu svg{width:19px;height:19px;opacity:.7;flex-shrink:0}
 
 /* Dark mode toggle inside drawer */
@@ -452,17 +465,32 @@ body.drK .switch::after{transform:translateX(20px)}
   .footer-cols{grid-template-columns:1.5fr 1fr 1fr}
 }
 @media (max-width:768px){
-  .header-inner{padding:0 16px;height:58px}
+  .header-inner{padding:0 16px;height:58px;gap:12px}
+
+  /* Hide desktop nav + theme toggle on mobile — only hamburger on the right */
   .main-nav{display:none}
+  .header-actions .icon-btn#theme-toggle{display:none}
+  .header-actions{margin-left:auto}
   .icon-btn.menu{display:flex}
+
   .brand{font-size:17px}
   .brand-mark{width:30px;height:30px;font-size:14px}
+
   .page{padding:0 14px}
   .layout{padding:20px 0 40px}
   .footer-cols{grid-template-columns:1fr 1fr;gap:24px}
-  .sport-tabs{overflow-x:auto;scrollbar-width:none;gap:6px}
-  .sport-tabs::-webkit-scrollbar{display:none}
-  .sport-tab{flex:0 0 auto;min-width:110px;font-size:13px}
+
+  /* Sport tabs — full width alignment fix */
+  .sport-tabs{
+    gap:6px;
+    width:100%;
+    margin-left:0;
+    margin-right:0;
+  }
+  .sport-tab{font-size:13px;flex:1;min-width:0;padding:0 8px}
+  .sport-tab i{font-size:11px}
+  .sport-tab span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
   .match-card{padding:20px 12px 12px}
   .team-logo-container{width:44px;height:44px}
   .team-name{font-size:12.5px}
@@ -470,7 +498,8 @@ body.drK .switch::after{transform:translateX(20px)}
   .post-title{font-size:.98rem}
 }
 @media (max-width:480px){
-  .sport-tab{min-width:95px;font-size:12px;padding:0 8px}
+  .sport-tab{font-size:12px;padding:0 5px;gap:4px}
+  .sport-tab i{font-size:10px}
   .footer-cols{grid-template-columns:1fr}
 }
 </style>
@@ -486,7 +515,7 @@ body.drK .switch::after{transform:translateX(20px)}
       YakoTV
     </a>
 
-    <!-- Nav moved right -->
+    <!-- Desktop nav (right side) -->
     <nav class="main-nav">
       <a href="/"><i class="fas fa-house"></i>Home</a>
       <a href="/p/cricket.html"><i class="fas fa-baseball-ball"></i>Cricket</a>
@@ -496,6 +525,7 @@ body.drK .switch::after{transform:translateX(20px)}
     </nav>
 
     <div class="header-actions">
+      <!-- Theme toggle (desktop only) -->
       <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
         <svg class="line" viewBox="0 0 24 24" id="icon-sun" style="display:none">
           <circle cx="12" cy="12" r="4"/>
@@ -505,6 +535,7 @@ body.drK .switch::after{transform:translateX(20px)}
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
         </svg>
       </button>
+      <!-- Hamburger (mobile only) — right side -->
       <button class="icon-btn menu" id="open-drawer" aria-label="Open menu">
         <svg class="line" viewBox="0 0 24 24">
           <line x1="3" y1="6" x2="21" y2="6"/>
@@ -536,7 +567,6 @@ body.drK .switch::after{transform:translateX(20px)}
       <li><a href="/p/contact-us.html"><i class="fas fa-envelope"></i>Contact</a></li>
     </ul>
 
-    <!-- Dark mode toggle inside drawer -->
     <div class="drawer-mode">
       <span class="drawer-mode-label">
         <svg class="line" viewBox="0 0 24 24">
@@ -553,10 +583,9 @@ body.drK .switch::after{transform:translateX(20px)}
 <main class="page">
   <div class="layout">
 
-    <!-- MAIN -->
     <section class="mainbar">
 
-      <!-- Matches (unchanged) -->
+      <!-- Matches -->
       <section class="matches-section" id="matches">
         <div class="container">
           <a href="https://t.me/yaminetv_tg" target="_blank" rel="noopener" class="join-telegram-btn">
@@ -577,44 +606,30 @@ body.drK .switch::after{transform:translateX(20px)}
           </div>
 
           <div class="sport-section" id="football-section" data-sport="football">
-            <div class="heading-wrapper left-align">
-              <h3 class="section-subtitle" id="football-matches-section">Football Matches</h3>
-            </div>
+            <div class="heading-wrapper left-align"><h3 class="section-subtitle" id="football-matches-section">Football Matches</h3></div>
             <div class="matches-grid" id="football-matches"></div>
-            <div class="no-matches-message" id="football-no-matches" style="display: none;">
-              <h3>No football matches available</h3>
-            </div>
+            <div class="no-matches-message" id="football-no-matches" style="display: none;"><h3>No football matches available</h3></div>
             <div class="load-more-sentinel" id="football-sentinel" data-sport="football"></div>
           </div>
 
           <div class="sport-section" id="cricket-section" data-sport="cricket">
-            <div class="heading-wrapper left-align">
-              <h3 class="section-subtitle" id="cricket-matches-section">Cricket Matches</h3>
-            </div>
+            <div class="heading-wrapper left-align"><h3 class="section-subtitle" id="cricket-matches-section">Cricket Matches</h3></div>
             <div class="matches-grid" id="cricket-matches"></div>
-            <div class="no-matches-message" id="cricket-no-matches" style="display: none;">
-              <h3>No cricket matches available</h3>
-            </div>
+            <div class="no-matches-message" id="cricket-no-matches" style="display: none;"><h3>No cricket matches available</h3></div>
             <div class="load-more-sentinel" id="cricket-sentinel" data-sport="cricket"></div>
           </div>
 
           <div class="sport-section" id="others-section" data-sport="others">
-            <div class="heading-wrapper left-align">
-              <h3 class="section-subtitle" id="others-matches-section">Other Matches</h3>
-            </div>
+            <div class="heading-wrapper left-align"><h3 class="section-subtitle" id="others-matches-section">Other Matches</h3></div>
             <div class="matches-grid" id="others-matches"></div>
-            <div class="no-matches-message" id="others-no-matches" style="display: none;">
-              <h3>No matches available</h3>
-            </div>
+            <div class="no-matches-message" id="others-no-matches" style="display: none;"><h3>No matches available</h3></div>
             <div class="load-more-sentinel" id="others-sentinel" data-sport="others"></div>
           </div>
         </div>
       </section>
 
       <!-- Latest blogs -->
-      <div class="section-title" id="latest">
-        <h2>Latest Blogs</h2>
-      </div>
+      <div class="section-title" id="latest"><h2>Latest Blogs</h2></div>
       <div class="posts-list">
         <article class="post-item">
           <span class="post-tag">Football</span>
@@ -662,11 +677,8 @@ body.drK .switch::after{transform:translateX(20px)}
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-sticky">
-
-        <!-- Ad slot 1 (invisible until you fill it) -->
         <div class="ad-slot" id="ad-slot-1"><!-- put ad code here --></div>
 
-        <!-- Popular Posts: latest 3, no numbers -->
         <div class="widget">
           <h3>Latest Posts</h3>
           <ul class="pop-list">
@@ -685,25 +697,20 @@ body.drK .switch::after{transform:translateX(20px)}
           </ul>
         </div>
 
-        <!-- Ad slot 2 (invisible until you fill it) -->
         <div class="ad-slot" id="ad-slot-2"><!-- put ad code here --></div>
-
       </div>
     </aside>
 
   </div>
 </main>
 
-<!-- ===================== BACK TO TOP ===================== -->
 <div class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
 </div>
 
-<!-- ===================== FOOTER ===================== -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-cols">
-
       <div class="footer-col footer-brand">
         <a href="/" class="brand"><span class="brand-mark">Y</span>YakoTV</a>
         <p>Football and cricket updates with free tools, live stats and match calculators — all in one clean place.</p>
@@ -711,7 +718,6 @@ body.drK .switch::after{transform:translateX(20px)}
           <i class="fab fa-telegram"></i><span>Join Telegram</span>
         </a>
       </div>
-
       <div class="footer-col">
         <h4>Quicks</h4>
         <ul>
@@ -722,7 +728,6 @@ body.drK .switch::after{transform:translateX(20px)}
           <li><a href="/p/others.html"><i class="fas fa-trophy"></i>Others</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Support</h4>
         <ul>
@@ -733,7 +738,6 @@ body.drK .switch::after{transform:translateX(20px)}
           <li><a href="/p/disclaimer.html"><i class="fas fa-triangle-exclamation"></i>Disclaimer</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Follow Us</h4>
         <ul>
@@ -743,9 +747,7 @@ body.drK .switch::after{transform:translateX(20px)}
           <li><a href="#" target="_blank"><i class="fab fa-facebook"></i>Facebook</a></li>
         </ul>
       </div>
-
     </div>
-
     <div class="footer-bottom">
       <span>&copy; <span id="year">2025</span> · <a href="/">YakoTV</a> · All rights reserved.</span>
       <span>Built with HTML · CSS · JS</span>
@@ -1182,7 +1184,7 @@ function toggleTheme(){
 })();
 document.getElementById('theme-toggle').onclick = toggleTheme;
 drawerSwitch.onclick = toggleTheme;
-drawerSwitch.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') { e.preventDefault(); toggleTheme(); } };
+drawerSwitch.onkeydown = (e) => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleTheme(); } };
 
 /* ================= Drawer ================= */
 const overlay = document.getElementById('drawer-overlay');
@@ -1193,7 +1195,7 @@ document.getElementById('close-drawer').onclick = closeDrawer;
 overlay.onclick = closeDrawer;
 document.querySelectorAll('.drawer-menu a').forEach(a => a.addEventListener('click', closeDrawer));
 
-/* ================= Scroll: header + back-to-top ================= */
+/* ================= Scroll ================= */
 const header = document.getElementById('header');
 const backTop = document.getElementById('back-top');
 function onScroll(){
@@ -1204,7 +1206,6 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
 
-/* ================= Year ================= */
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
